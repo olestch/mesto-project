@@ -1,0 +1,8 @@
+.photo-grid__icon {
+    display: inline-block;
+    width: 22px;
+    height: 19px;
+    background-image: url(../../../images/icon-heart.svg);
+    background-size: cover;
+    transition: 0.2s;
+}

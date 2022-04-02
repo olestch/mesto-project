@@ -1,0 +1,9 @@
+.photo-grid__info {
+    background-color: white;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
