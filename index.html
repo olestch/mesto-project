@@ -9,80 +9,61 @@
 </head>
 <body class="page">
     <header class="header">
-        <img class="header__logo" src="./images/logo.svg" alt="Logo">
-        <div class="header__underline"></div>
+        <img class="header__logo" src="./images/logo.svg" alt="Здесь расположена фотография пользователя.">
     </header>
     <main>
         <section class="profile">  
             <div class="profile__info">
                 <div class="profile__avatar"></div>
                 <div class="profile__name-area">
-                    <p class="profile__name">Жак-Ив Кусто</p>
-                    <button class="profile__edit-button"></button>
+                    <h1 class="profile__name">Жак-Ив Кусто</h1>
+                    <button class="profile__edit-button" type="button"></button>
                 </div>
                 <p class="profile__about">Исследователь океана</p>
             </div>
-            <button class="profile__add-button"></button>
+            <button class="profile__add-button" type="button"></button>
         </section>
         <section class="photo-grid">
             <div class="photo-grid__element">
-                <img class="photo-grid__image" src="./images/antalya.jpg" alt="Анталья">
+                <img class="photo-grid__image" src="./images/antalya.jpg" alt="Красивый вид на бухту в городе Анталья.">
                 <div class="photo-grid__info">
-                    <p class="photo-grid__title">Анталья</p>
-                    <label class="photo-grid__checkbox-label">
-                        <input type="checkbox" class="photo-grid__invisible-box">
-                        <span class="photo-grid__icon"></span>
-                    </label>
+                    <h2 class="photo-grid__title">Анталья</h2>
+                    <button class="photo-grid__icon" type="button"></button>
                 </div>
             </div>
             <div class="photo-grid__element">
-                <img class="photo-grid__image" src="./images/Texas.jpg" alt="Техас">
+                <img class="photo-grid__image" src="./images/Texas.jpg" alt="Мотоциклист едет по дороге сквозь Техаские прерии.">
                 <div class="photo-grid__info">
-                    <p class="photo-grid__title">Техас</p>
-                    <label class="photo-grid__checkbox-label">
-                        <input type="checkbox" class="photo-grid__invisible-box">
-                        <span class="photo-grid__icon"></span>
-                    </label>
+                    <h2 class="photo-grid__title">Техас</h2>
+                    <button class="photo-grid__icon" type="button"></button>
                 </div>
             </div>
             <div class="photo-grid__element">
-                <img class="photo-grid__image" src="./images/Geiranger_Fjord.jpg" alt="Гейрангер-фьорд">
+                <img class="photo-grid__image" src="./images/Geiranger_Fjord.jpg" alt="Вид на Гейрангер-фьорд, Норвегия.">
                 <div class="photo-grid__info">
-                    <p class="photo-grid__title">Гейрангер-фьорд</p>
-                    <label class="photo-grid__checkbox-label">
-                        <input type="checkbox" class="photo-grid__invisible-box">
-                        <span class="photo-grid__icon"></span>
-                    </label>
+                    <h2 class="photo-grid__title">Гейрангер-фьорд</h2>
+                    <button class="photo-grid__icon" type="button"></button>
                 </div>
             </div>
             <div class="photo-grid__element">
-                <img class="photo-grid__image" src="./images/Sankt-Peterburg.jpg" alt="Санкт-Петербург">
+                <img class="photo-grid__image" src="./images/Sankt-Peterburg.jpg" alt="Вид на раскрытый мост в Санкт-Петербурге.">
                 <div class="photo-grid__info">
-                    <p class="photo-grid__title">Санкт-Петербург</p>
-                    <label class="photo-grid__checkbox-label">
-                        <input type="checkbox" class="photo-grid__invisible-box">
-                        <span class="photo-grid__icon"></span>
-                    </label>
+                    <h2 class="photo-grid__title">Санкт-Петербург</h2>
+                    <button class="photo-grid__icon" type="button"></button>
                 </div>
             </div>
             <div class="photo-grid__element">
-                <img class="photo-grid__image" src="./images/kiso.jpg" alt="Кисо">
+                <img class="photo-grid__image" src="./images/kiso.jpg" alt="Вид на улочку в городке в долине Кисо, Япония.">
                 <div class="photo-grid__info">
-                    <p class="photo-grid__title">Кисо</p>
-                    <label class="photo-grid__checkbox-label">
-                        <input type="checkbox" class="photo-grid__invisible-box">
-                        <span class="photo-grid__icon"></span>
-                    </label>
+                    <h2 class="photo-grid__title">Кисо</h2>
+                    <button class="photo-grid__icon" type="button"></button>
                 </div>
             </div>
             <div class="photo-grid__element">
-                <img class="photo-grid__image" src="./images/Mars.jpg" alt="Марс">
+                <img class="photo-grid__image" src="./images/Mars.jpg" alt="Завораживающий вид на поверхность Марса.">
                 <div class="photo-grid__info">
-                    <p class="photo-grid__title">Марс</p>
-                    <label class="photo-grid__checkbox-label">
-                        <input type="checkbox" class="photo-grid__invisible-box">
-                        <span class="photo-grid__icon"></span>
-                    </label>
+                    <h2 class="photo-grid__title">Марс</h2>
+                    <button class="photo-grid__icon" type="button"></button>
                 </div>
             </div>
         </section>
@@ -90,17 +71,16 @@
     <footer class="footer">
         <p class="footer__copyright">&copy; 2022 Mesto Russia / Олесь Черный</p>
     </footer>
-    <form class="form">
-        <fieldset class="form__profile-info">
-            <p class="form__title">Редактировать профиль</p>
-            <input class="form__input-text" type="text" id="name" name="name" placeholder="Жак-Ив Кусто">
-            <input class="form__input-text" type="text" id="info" name="info" placeholder="Исследователь океана">
-            <input class="form__submit" type="submit" value="Сохранить">
-        </fieldset>
-        <button class="form__btn-close"></button>
-    </form>
-    <div class="cover"></div>
-    <!--Почему то не получилось создать обложку через псевдо ::before класса form. Она в любом случае накладывалась поверх всей формы.
-    z-index не помогал. Такой варинат удобряемый?-->
+    <div class="popup">
+        <button class="popup__btn-close" type="button"></button>
+        <form class="popup__container" name="popup__container">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <fieldset class="popup__profile-info">
+                <input class="popup__input-text" type="text" id="name" name="name" placeholder="Жак-Ив Кусто">
+                <input class="popup__input-text" type="text" id="info" name="info" placeholder="Исследователь океана">
+                <button class="popup__submit" type="submit" value="Сохранить">Сохранить</button>
+            </fieldset>
+        </form>
+    </div>
 </body>
 </html>

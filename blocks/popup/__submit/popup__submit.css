@@ -1,4 +1,4 @@
-.form__submit {
+.popup__submit {
     margin: 48px 0 0 0;
     padding: 0;
     width: 100%;
@@ -13,16 +13,18 @@
     line-height: 22px;
     text-align: center;
     border: none;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
-.form__submit:hover {
+.popup__submit:hover {
     opacity: 0.8;
+    cursor: pointer;
 }
 
 @media screen and (max-width:575px) {
-    .form__submit {
+    .popup__submit {
         font-size: 14px;
         line-height: 17px;
+        margin-top: 45px;
     }
 }
