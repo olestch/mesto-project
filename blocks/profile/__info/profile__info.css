@@ -5,6 +5,7 @@
     'avatar name-area name-area'
     'avatar about .'
     'avatar . .';
+    transition: 0.4s;
 }
 
 @media screen and (max-width: 700px) {

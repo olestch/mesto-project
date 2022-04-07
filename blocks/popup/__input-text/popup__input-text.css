@@ -1,4 +1,4 @@
-.form__input-text {
+.popup__input-text {
     margin: 54px 0 0 0;
     padding:0 0 9px 0;
     height: 23px;
@@ -12,17 +12,24 @@
     border: none;
     border-bottom: 1px solid rgba(0,0,0,0.2);
     outline: none;
+    transition: 0.4s;
     }
 
-.form__input-text:nth-child(3) {
+.popup__input-text:nth-child(2) {
     margin-top: 30px;
 }
 
-.form__input-text::placeholder {
+.popup__input-text::placeholder {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     color: #000000;
+}
+
+@media screen and (max-width:575px) {
+    .popup__input-text {
+        margin-top: 75px;
+    }
 }
