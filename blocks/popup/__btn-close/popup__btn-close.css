@@ -1,6 +1,9 @@
 .popup__btn-close {
-    margin: 0 0 8px 470px;
+    margin: 0;
     padding: 0;
+    position: absolute;
+    top: -40px;
+    right: -40px;
     border: none;
     width: 32px;
     height: 32px;
@@ -17,7 +20,8 @@
 
 @media screen and (max-width:575px) {
     .popup__btn-close {
-        margin-left: 265px;
+        top: -36px; 
+        right: 0; 
         width: 20px;
         height: 20px;
     }
