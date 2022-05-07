@@ -1,4 +1,4 @@
-.photo-grid__icon {
+.card__icon {
     margin: 0 20px 0 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,7 +11,7 @@
     transition: 0.2s;
 }
 
-.photo-grid__icon:hover {
+.card__icon:hover {
     opacity: 0.6;
     cursor: pointer;
 }
