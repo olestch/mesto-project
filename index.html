@@ -24,65 +24,60 @@
             <button class="profile__add-button" type="button"></button>
         </section>
         <section class="photo-grid">
-            <div class="photo-grid__element">
-                <img class="photo-grid__image" src="./images/antalya.jpg" alt="Красивый вид на бухту в городе Анталья.">
-                <div class="photo-grid__info">
-                    <h2 class="photo-grid__title">Анталья</h2>
-                    <button class="photo-grid__icon" type="button"></button>
-                </div>
-            </div>
-            <div class="photo-grid__element">
-                <img class="photo-grid__image" src="./images/Texas.jpg" alt="Мотоциклист едет по дороге сквозь Техаские прерии.">
-                <div class="photo-grid__info">
-                    <h2 class="photo-grid__title">Техас</h2>
-                    <button class="photo-grid__icon" type="button"></button>
-                </div>
-            </div>
-            <div class="photo-grid__element">
-                <img class="photo-grid__image" src="./images/Geiranger_Fjord.jpg" alt="Вид на Гейрангер-фьорд, Норвегия.">
-                <div class="photo-grid__info">
-                    <h2 class="photo-grid__title">Гейрангер-фьорд</h2>
-                    <button class="photo-grid__icon" type="button"></button>
-                </div>
-            </div>
-            <div class="photo-grid__element">
-                <img class="photo-grid__image" src="./images/Sankt-Peterburg.jpg" alt="Вид на раскрытый мост в Санкт-Петербурге.">
-                <div class="photo-grid__info">
-                    <h2 class="photo-grid__title">Санкт-Петербург</h2>
-                    <button class="photo-grid__icon" type="button"></button>
-                </div>
-            </div>
-            <div class="photo-grid__element">
-                <img class="photo-grid__image" src="./images/kiso.jpg" alt="Вид на улочку в городке в долине Кисо, Япония.">
-                <div class="photo-grid__info">
-                    <h2 class="photo-grid__title">Кисо</h2>
-                    <button class="photo-grid__icon" type="button"></button>
-                </div>
-            </div>
-            <div class="photo-grid__element">
-                <img class="photo-grid__image" src="./images/Mars.jpg" alt="Завораживающий вид на поверхность Марса.">
-                <div class="photo-grid__info">
-                    <h2 class="photo-grid__title">Марс</h2>
-                    <button class="photo-grid__icon" type="button"></button>
-                </div>
-            </div>
         </section>
     </main>
     <footer class="footer">
         <p class="footer__copyright">&copy; 2022 Mesto Russia / Олесь Черный</p>
     </footer>
-    <div class="popup popup_opened">
+
+    <div class="popup js-popup-profile">
         <div class="popup__container" name="popup__container">
             <button class="popup__btn-close" type="button"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
             <form class="popup__form" name="popup__form">
                 <fieldset class="popup__profile-info">
-                    <input class="popup__input-text" type="text" id="name" name="name" placeholder="Жак-Ив Кусто">
-                    <input class="popup__input-text" type="text" id="info" name="info" placeholder="Исследователь океана">
+                    <input class="popup__input-text" type="text" id="profile-name" name="profile-name" placeholder="Жак-Ив Кусто">
+                    <input class="popup__input-text" type="text" id="profile-about" name="profile-about" placeholder="Исследователь океана">
                     <button class="popup__submit" type="submit" value="Сохранить">Сохранить</button>
                 </fieldset>
             </form>
         </div>
     </div>
+
+    <div class="popup js-popup-card">
+        <div class="popup__container" name="popup__container">
+            <button class="popup__btn-close" type="button"></button>
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form" name="popup__form">
+                <fieldset class="popup__profile-info">
+                    <input class="popup__input-text" type="text" id="new-card-name" name="new-card-name" placeholder="Название">
+                    <input class="popup__input-text" type="text" id="new-card-link" name="new-card-link" placeholder="Ссылка на картинку">
+                    <button class="popup__submit" type="submit" value="Создать">Создать</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup js-popup-image">
+        <div class="popup__container" name="popup__container">
+            <button class="popup__btn-close" type="button"></button>
+            <figure class="popup__figure">
+                <img class="popup__image" src="#" alt="">
+                <figcaption class="popup__caption"></figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <template id="card-template">
+        <div class="card">
+            <img class="card__delete-icon" src="./images/card__delete-icon.svg" alt="удалить место">
+            <img class="card__image" src="#" alt="">
+            <div class="card__info">
+                <h2 class="card__title"></h2>
+                <button class="card__icon" type="button"></button>
+            </div>
+        </div>
+    </template>
+    <script src="./scripts/index.js"></script>
 </body>
 </html>

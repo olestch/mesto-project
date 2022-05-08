@@ -16,11 +16,20 @@
 @import url(../blocks/profile/__edit-button/profile__edit-button.css);
 
 @import url(../blocks/photo-grid/photo-grid.css);
-@import url(../blocks/photo-grid/__element/photo-grid__element.css);
+/* added card (photo-grid__element deleted */
+/* @import url(../blocks/photo-grid/__element/photo-grid__element.css);
 @import url(../blocks/photo-grid/__image/photo-grid__image.css);
 @import url(../blocks/photo-grid/__info/photo-grid__info.css);
 @import url(../blocks/photo-grid/__title/photo-grid__title.css);
-@import url(../blocks/photo-grid/__icon/photo-grid__icon.css);
+@import url(../blocks/photo-grid/__icon/photo-grid__icon.css); */
+
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__title/card__title.css);
+@import url(../blocks/card/__info/card__info.css);
+@import url(../blocks/card/__image/card__image.css);
+@import url(../blocks/card/__icon/card__icon.css);
+@import url(../blocks/card/__icon/_active/card__icon_active.css);
+@import url(../blocks/card/__delete-icon/card__delete-icon.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
@@ -34,3 +43,6 @@
 @import url(../blocks/popup/__profile-info/popup__profile-info.css);
 @import url(../blocks/popup/__submit/popup__submit.css);
 @import url(../blocks/popup/__btn-close/popup__btn-close.css);
+@import url(../blocks/popup/__figure/popup__figure.css);
+@import url(../blocks/popup/__image/popup__image.css);
+@import url(../blocks/popup/__caption/popup__caption.css);
