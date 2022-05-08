@@ -30,7 +30,7 @@
         <p class="footer__copyright">&copy; 2022 Mesto Russia / Олесь Черный</p>
     </footer>
 
-    <div class="popup popup_opened">
+    <div class="popup" id="popup-profile">
         <div class="popup__container" name="popup__container">
             <button class="popup__btn-close" type="button"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
@@ -43,14 +43,41 @@
             </form>
         </div>
     </div>
-    <template>
+
+    <div class="popup" id="popup-card">
+        <div class="popup__container" name="popup__container">
+            <button class="popup__btn-close" type="button"></button>
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form" name="popup__form">
+                <fieldset class="popup__profile-info">
+                    <input class="popup__input-text" type="text" id="name" name="name" placeholder="Назввание">
+                    <input class="popup__input-text" type="text" id="info" name="info" placeholder="Ссылка на картинку">
+                    <button class="popup__submit" type="submit" value="Создать">Создать</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup" id="popup-image">
+        <div class="popup__container" name="popup__container">
+            <button class="popup__btn-close" type="button"></button>
+            <figure class="popup__figure">
+                <img class="popup__image" src="#" alt="">
+                <figcaption class="popup__caption"></figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <template id="card-template">
         <div class="card">
-            <img class="card__image" src="./images/antalya.jpg" alt="Красивый вид на бухту в городе Анталья.">
+            <img class="card__delete-icon" src="./images/card__delete-icon.svg" alt="удалить место">
+            <img class="card__image" src="#" alt="">
             <div class="card__info">
-                <h2 class="card__title">Анталья</h2>
+                <h2 class="card__title"></h2>
                 <button class="card__icon" type="button"></button>
             </div>
         </div>
     </template>
+
 </body>
 </html>
