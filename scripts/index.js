@@ -1,12 +1,9 @@
-console.log('hi');
 const popupProfile = document.querySelector('.js-popup-profile');
 const popupCard = document.querySelector('.js-popup-card');
 const popupImage = document.querySelector('.js-popup-image');
 const profileEditButton = document.querySelector('.profile__edit-button');
-console.log('hi again');
 const cardAddButton = document.querySelector('.profile__add-button');
 const profileCloseButton = popupProfile.querySelector('.popup__btn-close');
-console.log('and again');
 const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__about');
 const popupCardCloseButton = popupCard.querySelector('.popup__btn-close');
@@ -22,30 +19,30 @@ const cardFormArea = popupCard.querySelector('.popup__form');
 const profileFormArea = popupProfile.querySelector('.popup__form');
 const initialCards = [
     {
-        name: 'Анталья',
-        link: 'https://unsplash.com/photos/fIq0tET6llw',
+      name: 'Архыз',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
     },
     {
-        name: 'Техас',
-        link: 'https://disk.yandex.ru/i/_6FnpiVfyWF_6w',
+      name: 'Челябинская область',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
     },
     {
-        name: 'Гейрангер-фьорд',
-        link: 'https://disk.yandex.ru/i/fCmrf3f5pwl0tg',
+      name: 'Иваново',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
     },
     {
-        name: 'Санкт-Петербург',
-        link: 'https://disk.yandex.ru/i/J2DFLL0bASP_AQ',
+      name: 'Камчатка',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
     },
     {
-        name: 'Кисо',
-        link: 'https://disk.yandex.ru/i/B0XHzNYcHpM-Cg',
+      name: 'Холмогорский район',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
     },
     {
-        name: 'Марс',
-        link: 'https://disk.yandex.ru/i/TrJT4SEK2GwIsQ',
-    },
-];
+      name: 'Байкал',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    }
+  ];   
 
 function showPopup(popup) {
     popup.classList.add('popup_opened');
@@ -59,7 +56,7 @@ function handleProfileFormSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = profileNameInput.value;
     profileAbout.textContent = profileAboutInput.value;
-    hidePopup(profilePopup);
+    hidePopup(popupProfile);
 }
 
 function showPopupImage(caption, link) {
@@ -69,26 +66,6 @@ function showPopupImage(caption, link) {
     popupImage.querySelector('.popup__caption').textContent = caption;
 }
 
-profileEditButton.addEventListener('click', function () {
-    showPopup(popupProfile);
-})
-
-profileCloseButton.addEventListener('click', function () {
-    hidePopup(popupProfile);
-})
-
-cardAddButton.addEventListener('click', function () {
-    showPopup(popupCard);
-})
-
-popupCardCloseButton.addEventListener('click', function () {
-    hidePopup(popupCard);
-})
-
-popupImageCloseButton.addEventListener('click', function () {
-    hidePopup(popupImage);
-})
-
 function newCard(cardName, cardLink) {
     const card = cardTemplate.querySelector('.card').cloneNode(true);
     card.querySelector('.card__title').textContent = cardName;
@@ -96,7 +73,8 @@ function newCard(cardName, cardLink) {
     cardImage.src = cardLink;
     cardImage.alt = cardName;
     cardImage.addEventListener('click', function(evt) {
-        showPopupImage(evt.target.alt, evt.target.src);
+//       showPopupImage(evt.target.alt, evt.target.src);
+        showPopupImage(cardName, cardLink);
     });
     
     card
@@ -125,10 +103,30 @@ function handleCardFormSubmit(evt) {
     hidePopup(popupCard);
 }
 
+
+profileEditButton.addEventListener('click', function () {
+    showPopup(popupProfile);
+})
+
+profileCloseButton.addEventListener('click', function () {
+    hidePopup(popupProfile);
+})
+
+cardAddButton.addEventListener('click', function () {
+    showPopup(popupCard);
+})
+
+popupCardCloseButton.addEventListener('click', function () {
+    hidePopup(popupCard);
+})
+
+popupImageCloseButton.addEventListener('click', function () {
+    hidePopup(popupImage);
+})
+
 cardFormArea.addEventListener('submit', handleCardFormSubmit);
 profileFormArea.addEventListener('submit', handleProfileFormSubmit);
 
 initialCards.forEach(function (card) {
     addCard(card.name, card.link);
 });
-console.log('end');
