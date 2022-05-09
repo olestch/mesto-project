@@ -63,8 +63,8 @@ function handleProfileFormSubmit(evt) {
 function showPopupImage(caption, link) {
     imagePopupImage.src = link;
     imagePopupImage.alt = caption;
-    showPopup(popupImage);
     imagePopupImageCaption.textContent = caption;
+    showPopup(popupImage);
 }
 
 function newCard(cardName, cardLink) {
