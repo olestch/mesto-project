@@ -65,7 +65,6 @@ function showPopupImage(caption, link) {
     imagePopupImage.alt = caption;
     showPopup(popupImage);
     imagePopupImageCaption.textContent = caption;
-//    popupImage.querySelector('.popup__caption').textContent = caption;
 }
 
 function newCard(cardName, cardLink) {
@@ -75,7 +74,6 @@ function newCard(cardName, cardLink) {
     cardImage.src = cardLink;
     cardImage.alt = cardName;
     cardImage.addEventListener('click', function(evt) {
-//       showPopupImage(evt.target.alt, evt.target.src);
         showPopupImage(cardName, cardLink);
     });
     
@@ -105,10 +103,9 @@ function handleCardFormSubmit(evt) {
     hidePopup(popupCard);
 }
 
-
-profileEditButton.addEventListener('click', function (name,about) {
-    profileName.textContent = name;
-    profileAbout.textContent = about;
+profileEditButton.addEventListener('click', function () {
+    profileAboutInput.value = profileAbout.textContent; 
+    profileNameInput.value = profileName.textContent;
     showPopup(popupProfile);
 })
 
