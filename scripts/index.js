@@ -17,6 +17,7 @@ const cardPlaceName = popupCard.querySelector('input[name=new-card-name]');
 const cardImageLink = popupCard.querySelector('input[name=new-card-link]');
 const cardFormArea = popupCard.querySelector('.popup__form');
 const profileFormArea = popupProfile.querySelector('.popup__form');
+const imagePopupImageCaption = popupImage.querySelector('.popup__caption');
 const initialCards = [
     {
       name: 'Архыз',
@@ -60,10 +61,11 @@ function handleProfileFormSubmit(evt) {
 }
 
 function showPopupImage(caption, link) {
-    showPopup(popupImage);
     imagePopupImage.src = link;
     imagePopupImage.alt = caption;
-    popupImage.querySelector('.popup__caption').textContent = caption;
+    showPopup(popupImage);
+    imagePopupImageCaption.textContent = caption;
+//    popupImage.querySelector('.popup__caption').textContent = caption;
 }
 
 function newCard(cardName, cardLink) {
@@ -104,7 +106,9 @@ function handleCardFormSubmit(evt) {
 }
 
 
-profileEditButton.addEventListener('click', function () {
+profileEditButton.addEventListener('click', function (name,about) {
+    profileName.textContent = name;
+    profileAbout.textContent = about;
     showPopup(popupProfile);
 })
 
