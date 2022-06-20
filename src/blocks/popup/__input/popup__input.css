@@ -1,4 +1,4 @@
-.popup__input-text {
+.popup__input {
     margin: 54px 0 0 0;
     padding:0 0 9px 0;
     height: 23px;
@@ -15,11 +15,11 @@
     transition: 0.4s;
     }
 
-.popup__input-text:nth-child(2) {
+.popup__input:nth-child(2) {
     margin-top: 30px;
 }
 
-.popup__input-text::placeholder {
+.popup__input::placeholder {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -29,7 +29,7 @@
 }
 
 @media screen and (max-width:575px) {
-    .popup__input-text {
+    .popup__input {
         margin-top: 75px;
     }
 }
