@@ -19,4 +19,5 @@ export function showPopup(popup) {
 export function hidePopup(popup) {
     popup.classList.remove('popup_opened');
     document.removeEventListener('keydown', closeOnEsc);
+    document.removeEventListener('click', closeOnOverlay);
 }
