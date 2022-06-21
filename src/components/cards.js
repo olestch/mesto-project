@@ -1,41 +1,15 @@
-const cardTemplate = document.querySelector('#card-template').content;
 import { showPopupImage } from './index.js';
+export const cardTemplate = document.querySelector('#card-template').content;
 
-import antalya from '../images/antalya.jpg';
-import fyord from '../images/Geiranger_Fjord.jpg';
-import kiso from '../images/kiso.jpg';
-import mars from '../images/Mars.jpg';
-import spb from '../images/Sankt-Peterburg.jpg';
-import texas from '../images/Texas.jpg';
+function toggleLike (evt) {
+    evt.target.classList.toggle('card__icon_active')
+};
 
-export const initialCards = [
-    {
-      name: 'Анталья',
-      link: antalya
-    },
-    {
-      name: 'Фьерд Гайрангер',
-      link: fyord
-    },
-    {
-      name: 'Кисо',
-      link: kiso
-    },
-    {
-      name: 'Марс',
-      link: mars
-    },
-    {
-      name: 'Санкт-Петербург',
-      link: spb
-    },
-    {
-      name: 'Техас',
-      link: texas
-    }
-];
+function deleteCard (evt) {
+    evt.target.closest('.card').remove();
+}
 
-export function newCard(cardName, cardLink) {
+export function createCard(cardName, cardLink) {
     const card = cardTemplate.querySelector('.card').cloneNode(true);
     card.querySelector('.card__title').textContent = cardName;
     const cardImage = card.querySelector('.card__image');
@@ -47,15 +21,11 @@ export function newCard(cardName, cardLink) {
     
     card
         .querySelector('.card__icon')
-        .addEventListener('click', function(evt) {
-            evt.target.classList.toggle('card__icon_active');
-        });
+        .addEventListener('click', toggleLike);
 
     card
         .querySelector('.card__delete-icon')
-        .addEventListener('click', function(evt) {
-            card.remove();
-        });
+        .addEventListener('click', deleteCard);
     return card;
-}
+};
 
