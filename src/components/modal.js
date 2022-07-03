@@ -1,6 +1,6 @@
 function closeOnOverlay(evt) {
     if (evt.target.classList.contains('popup')) {
-        hidePopup(document.querySelector('.popup_opened'));
+        hidePopup(evt.target);
     }
 }
 
