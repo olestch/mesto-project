@@ -1,24 +1,10 @@
 .profile__avatar {
-    margin-right: 30px;
+    position: relative;
+    margin: 0;
     width: 120px;
     height: 120px;
+    object-fit: cover;
     border-radius: 50%;
-    background-image: url(../../../images/avatar.jpg);
-    background-size: cover;
     overflow: hidden;
-    grid-area: avatar;
-    transition: 0.4s;
-}
-
-@media screen and (max-width: 700px) {
-    .profile__avatar {
-        margin: 0;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .profile__avatar {
-        width: 120px;
-        height: 120px;
-    }
+    transition: 0.6s;
 }

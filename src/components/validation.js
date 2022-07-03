@@ -1,9 +1,9 @@
 import { validationElements } from "./index.js";
 
-const showInputError = (formElement, inputElement, errorMessage,config) => {
+const showInputError = (formElement, inputElement, errorMessage, config) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add(validationElements.inputErrorClass);
-    errorElement.textContent = errorMessage
+    errorElement.textContent = errorMessage;
     errorElement.classList.add(validationElements.errorClass);
 };
 
@@ -40,7 +40,7 @@ const isValid = (formElement, inputElement) => {
 };
 
 
-const setEventListeners = (formElement,conifg) => {
+const setEventListeners = (formElement,config) => {
     const inputList = Array.from(formElement.querySelectorAll(validationElements.inputSelector));
     const buttonElement = formElement.querySelector(validationElements.submitButtonSelector);
     toggleButtonState(inputList, buttonElement);
