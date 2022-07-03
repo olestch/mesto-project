@@ -1,7 +1,9 @@
+// КОНСОЛЬ НЕ ВЫДАЕТ ОШИБОК, НО ВСЕ РАВНО ВСЕ ПОЛОМАНО( НЕ МОГУ ПОНЯТЬ ПРИЧИНУ 
+
 import '../pages/index.css';
 
 import { getInitialCard, getProfileData, editProfile, publishCard, editAvatar} from './api.js';
-import {renderCard, addCard, popupImage} from './cards.js';
+import {renderCard, addCard } from './cards.js';
 import {showPopup, hidePopup} from './modal.js';
 import {enableValidation, disableButton, enableButton} from './validation.js';
 
@@ -19,6 +21,7 @@ const cardAddButton = document.querySelector('.profile__add-button');
 const cardsArea = document.querySelector('.photo-grid');
 
 // popups
+const popups = document.querySelectorAll('.popup');
 const popupCard = document.querySelector('.js-popup-card');
 const popupCardForm = popupCard.querySelector('.popup__form');
 const popupCardSubmit = popupCard.querySelector('.popup__submit');
@@ -34,12 +37,6 @@ const popupAvatar = document.querySelector('.js-popup-avatar');
 const popupAvatarInput = popupAvatar.querySelector("input[name=url]");
 const popupAvatarSubmit = popupAvatar.querySelector('.popup__submit');
 
-
-const popupCardCloseButton = popupCard.querySelector('.popup__btn-close');
-const popupImageCloseButton = popupImage.querySelector('.popup__btn-close');
-const profileCloseButton = popupProfile.querySelector('.popup__btn-close');
-const popupAvatarCloseButton = popupAvatar.querySelector('.popup__btn-close');
-
 //profile
 const profileData = {};
 
@@ -53,8 +50,8 @@ export const validationElements = {
 };
 
 function renderProfile (profileData) {
-    profileName.textContent = data.name;
-    profileAbout.textContent = data.about;
+    profileName.textContent = profileData.name;
+    profileAbout.textContent = profileData.about;
     profileAvatar.src = profileData.avatar;
 }
 
@@ -68,6 +65,10 @@ function setProfileData (data) {
 function changeButtonText (button, text) {
     button.value = text;
 }
+/*
+Promise.all([getProfileData(), getInitialCard()])
+    .then(())
+*/
 
 getProfileData()
 .then((data) => {
@@ -161,20 +162,12 @@ profileSubmit.addEventListener('submit', editProfileData);
 popupAvatarSubmit.addEventListener('submit', editAvatarPic);
 popupCardSubmit.addEventListener('submit', addNewCard);
 
-profileCloseButton.addEventListener('click', function() {
-    hidePopup(popupProfile);
-});
-
-popupCardCloseButton.addEventListener('click', function() {
-    hidePopup(popupCard);
-});
-
-popupAvatarCloseButton.addEventListener('click', function() {
-    hidePopup(popupAvatar);
-});
-
-popupImageCloseButton.addEventListener('click', function() {
-    hidePopup(popupImage);
-});
+popups.forEach((popup) => {
+    popup.addEventListener('click', function(evt) {
+        if (evt.target.classList.contains('popup__btn-close')) {
+            hidePopup(popup);
+        }
+    })
+})
 
 enableValidation(validationElements);

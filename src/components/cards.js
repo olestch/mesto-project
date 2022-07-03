@@ -2,14 +2,11 @@ import { showPopup } from './modal.js';
 import { deleteCard, likeCard } from './api.js';
 
 const cardTemplate = document.querySelector('#card-template').content;
-export const popupImage = document.querySelector('.js-popup-image');
+const popupImage = document.querySelector('.js-popup-image');
 const imagePopupImage = popupImage.querySelector('.popup__image');
 const imagePopupImageCaption = popupImage.querySelector('.popup__caption');
 const cardsContainer = document.querySelector('.photo-grid');
 
-function toggleLike (evt) {
-    evt.target.classList.toggle('card__icon_active')
-};
 
 function removeCard (evt) {
     evt.target.closest('.card').remove();
@@ -41,7 +38,9 @@ function setLikeButtonStatus (likesData, profileId, likeButton) {
         }
     })
     if (likedByMe) {
-        toggleLike(likeButton)
+        likeButton.classList.add('card__icon_active');
+    } else {
+        likeButton.classList.remove('card__icon_active');
     }
 }
 
@@ -59,7 +58,7 @@ export function renderCard (cardData, profileId) {
     cardTitle.textContent = cardData.name;
 
     showAmountOfLikes(allLikes, likeCounter);
-    setLikeButtonState(allLikes, profileId, likeButton);
+    setLikeButtonStatus(allLikes, profileId, likeButton);
 
     likeButton.addEventListener('click', function(evt) {
         const action = setLikeAction(allLikes, profileId);
