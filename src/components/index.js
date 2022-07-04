@@ -1,5 +1,3 @@
-// КОНСОЛЬ НЕ ВЫДАЕТ ОШИБОК, НО ВСЕ РАВНО ВСЕ ПОЛОМАНО( НЕ МОГУ ПОНЯТЬ ПРИЧИНУ 
-
 import '../pages/index.css';
 
 import { getInitialCard, getProfileData, editProfile, publishCard, editAvatar} from './api.js';
@@ -18,7 +16,6 @@ const profileAvatarEditButton = document.querySelector('.profile__avatar-edit-bu
 
 // card section 
 const cardAddButton = document.querySelector('.profile__add-button');
-const cardsArea = document.querySelector('.photo-grid');
 
 // popups
 const popups = document.querySelectorAll('.popup');
@@ -32,10 +29,12 @@ const popupProfile = document.querySelector('.js-popup-profile');
 const profileNameInput = popupProfile.querySelector('input[name=profile-name]');
 const profileAboutInput = popupProfile.querySelector('input[name=profile-about]');
 const profileSubmit = popupProfile.querySelector('.popup__submit');
+const popupProfileForm = popupProfile.querySelector('.popup__form');
 
 const popupAvatar = document.querySelector('.js-popup-avatar');
-const popupAvatarInput = popupAvatar.querySelector("input[name=url]");
+const popupAvatarInput = popupAvatar.querySelector("input[name=avatar-link]");
 const popupAvatarSubmit = popupAvatar.querySelector('.popup__submit');
+const popupAvatarForm = popupAvatar.querySelector('.popup__form');
 
 //profile
 const profileData = {};
@@ -136,6 +135,7 @@ function editAvatarPic (evt) {
     })
 }
 
+
 function addNewCard (evt) {
     evt.preventDefault();
     changeButtonText(popupCardSubmit, 'Сохранине...');
@@ -158,9 +158,9 @@ profileEditButton.addEventListener('click', handleEditProfile);
 profileAvatarEditButton.addEventListener('click', handleEditProfileAvatar);
 cardAddButton.addEventListener('click', handleNewCard);
 
-profileSubmit.addEventListener('submit', editProfileData);
-popupAvatarSubmit.addEventListener('submit', editAvatarPic);
-popupCardSubmit.addEventListener('submit', addNewCard);
+popupProfileForm.addEventListener('submit', editProfileData);
+popupAvatarForm.addEventListener('submit', editAvatarPic);
+popupCardForm.addEventListener('submit', addNewCard);
 
 popups.forEach((popup) => {
     popup.addEventListener('click', function(evt) {
