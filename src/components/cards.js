@@ -8,10 +8,6 @@ const imagePopupImageCaption = popupImage.querySelector('.popup__caption');
 const cardsContainer = document.querySelector('.photo-grid');
 
 
-function removeCard (evt) {
-    evt.target.closest('.card').remove();
-}
-
 export function addCard (card) {
     cardsContainer.prepend(card);
 }
@@ -77,17 +73,15 @@ export function renderCard (cardData, profileId) {
         deleteButton.addEventListener('click', function(evt) {
             deleteCard(cardData._id)
             .then(() => {
-                removeCard(evt);
+               evt.target.closest('.card').remove();
             })
             .catch((err) => {
                 console.log(err);
             })
         })
+    } else {
+        deleteButton.classList.add('card__delete-icon_satus_hidden');
     }
-
-        else {
-            deleteButton.classList.add('card__delete-icon_satus_hidden');
-        }
 
     cardImage.addEventListener('click', function() {
         showPopup(popupImage);

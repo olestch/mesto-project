@@ -48,18 +48,20 @@ export const validationElements = {
   errorClass: 'popup__input-error'
 };
 
+function setProfileData (data) {
+    profileData.name = data.name;
+    profileData.about = data.about;
+    profileData.avatar = data.avatar;
+    profileData.id = data._id;
+}
+
 function renderProfile (profileData) {
     profileName.textContent = profileData.name;
     profileAbout.textContent = profileData.about;
     profileAvatar.src = profileData.avatar;
 }
 
-function setProfileData (data) {
-    profileData.name = data.name;
-    profileData.about = data.about;
-    profileAbout.avatar = data.avatar;
-    profileAbout.id = data._id;
-}
+
 
 function changeButtonText (button, text) {
     button.value = text;
@@ -169,5 +171,5 @@ popups.forEach((popup) => {
         }
     })
 })
-
+console.log(profileData.id);
 enableValidation(validationElements);
