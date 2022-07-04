@@ -64,7 +64,7 @@ function renderProfile (profileData) {
 
 
 function changeButtonText (button, text) {
-    button.value = text;
+    button.textContent = text;
 }
 /*
 Promise.all([getProfileData(), getInitialCard()])
@@ -89,8 +89,8 @@ getProfileData()
 
 function handleEditProfile () {
     showPopup(popupProfile);
-    profileName.value = profileData.name;
-    profileAbout.value = profileData.about;
+    profileNameInput.value = profileData.name;
+    profileAboutInput.value = profileData.about;
 }
 
 function handleEditProfileAvatar () {
