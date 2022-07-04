@@ -55,7 +55,7 @@ export const publishCard = (name, link) => {
         })
     })
     .then(res => {
-        return handleRespone(res);
+        return handleResponse(res);
     });
 }
 
